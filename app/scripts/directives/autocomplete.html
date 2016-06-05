@@ -1,0 +1,14 @@
+<div class="autocomplete">
+
+  <label>
+    <input type="text" placeholder="Text..." ng-model="input" />
+    <button ng-show="canAddNewValue" class="autocomplete-button-add" ng-click="addAutocomplete(input)">+</button>
+  </label>
+
+
+  <ul class="autocomplete-list" ng-show="visible">
+    <li ng-repeat="value in values | autocomplete:input | orderBy: 'custom'">
+      <button class="autocomplete-button-result" ng-click="selectValue(value)">{{value.name}}</button>
+    </li>
+  </ul>
+</div>
